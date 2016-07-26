@@ -1,5 +1,7 @@
 package com.example.draldo.loginapp;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,5 +24,12 @@ public class LogActivity extends AppCompatActivity {
     public void Return(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void launchReceiver(View view) {
+        Intent intent = new Intent(this, MyBroadcastReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this.getApplicationContext(), 1, intent, 0);
+        AlarmManager alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarm.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+1, pendingIntent);
     }
 }

@@ -33,18 +33,13 @@ public class MainActivity extends AppCompatActivity {
         name = (EditText)findViewById(R.id.a_main_name);
         pass = (EditText)findViewById(R.id.a_main_pass);
 
-        if(name.getText().toString().matches("") || pass.getText().toString().matches("")) {
-            Toast.
-        }
-        else{
-            for (int i = 0; i < 10; i++) {
-                if (name.getText().toString().equals(usrdb[i][0])) {
-                    if (pass.getText().toString().equals(usrdb[i][2])) {
-                        Intent intent = new Intent(this, LogActivity.class);
-                        intent.putExtra("log_name", name.getText().toString());
-                        intent.putExtra("log_pass", pass.getText().toString());
-                        startActivity(intent);
-                    }
+        for (int i = 0; i < 10; i++) {
+            if (name.getText().toString().equals(usrdb[i][0])) {
+                if (pass.getText().toString().equals(usrdb[i][2])) {
+                    Intent intent = new Intent(this, LogActivity.class);
+                    intent.putExtra("log_name", name.getText().toString());
+                    intent.putExtra("log_pass", pass.getText().toString());
+                    startActivity(intent);
                 }
             }
         }
