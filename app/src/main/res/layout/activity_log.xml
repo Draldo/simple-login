@@ -16,12 +16,6 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:text="Broadcast receiver"
-        android:onClick="launchReceiver"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
         android:onClick="Return"
         android:text="Log out"
         android:layout_width="match_parent"

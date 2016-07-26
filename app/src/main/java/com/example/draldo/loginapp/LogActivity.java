@@ -13,7 +13,6 @@ public class LogActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log);
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("log_name");
@@ -26,10 +25,4 @@ public class LogActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void launchReceiver(View view) {
-        Intent intent = new Intent(this, MyBroadcastReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this.getApplicationContext(), 1, intent, 0);
-        AlarmManager alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarm.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+1, pendingIntent);
-    }
 }

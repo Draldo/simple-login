@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.draldo.loginapp">
-    
-    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +18,6 @@
         <activity android:name=".LogActivity" />
         <activity android:name=".RegisterActivity"></activity>
 
-        <receiver android:name=".MyBroadcastReceiver"></receiver>
     </application>
 
 </manifest>
